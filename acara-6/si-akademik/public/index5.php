@@ -9,9 +9,9 @@ spl_autoload_register(function ($class) {
     $class = ltrim($class, '\\');
     if (stripos($class, 'app\\') !== 0) return;
 
-    $parts = explode('\\', substr($class, 4));   // controllers\MahasiswaController
-    $name  = array_pop($parts);                  // MahasiswaController
-    $dir   = strtolower(implode('/', $parts));   // controllers
+    $parts = explode('\\', substr($class, 4));   
+    $name  = array_pop($parts);                  
+    $dir   = strtolower(implode('/', $parts));  
 
     $file = __DIR__ . "/../app/$dir/$name.php";
     if (file_exists($file)) require $file;
